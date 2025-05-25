@@ -1,67 +1,86 @@
-Diabetes Prediction Using Machine Learning
+# 🩺 DiabetesDetectAI
 
-This project explores various machine learning models to predict diabetes using healthcare data. By pre-processing, analyzing, and modeling the dataset from Kaggle, we aim to accurately classify whether a patient is diabetic or not.
+This machine learning project aims to predict diabetes using patient health data. By applying classification models on a Kaggle dataset, we achieve highly accurate and reliable results, assisting early diagnosis and supporting better healthcare outcomes.
 
-📊 Dataset
+## 📊 Dataset
 
-Source: Kaggle - Healthcare Diabetes Dataset
-Rows: 2,768
-Features:
-  Pregnancies
-  Glucose
-  BloodPressure
-  SkinThickness
-  Insulin
-  BMI
-  DiabetesPedigreeFunction
-  Age
-  Outcome (target variable: 0 = non-diabetic, 1 = diabetic)
-  
-⚙️ Project Workflow
-    Data Preprocessing
-        Removal of outliers and noisy values
-        Feature scaling using StandardScaler
-        SMOTE applied for handling class imbalance
-        Removal of non-informative columns (e.g., ID)
-    Exploratory Data Analysis (EDA)
-        Visualization using seaborn and matplotlib
-        Distribution plots, boxplots, and correlation heatmap
-        Analysis of class imbalance and key predictive features
-Model Training & Evaluation
-    Models implemented:
-        Decision Tree
-        Random Forest
-        Support Vector Machine (SVM)
-        k-Nearest Neighbors (KNN)
-        Naive Bayes
-    Evaluation metrics:
-        Accuracy, Precision, Recall, F1-Score
-        Confusion Matrices
-        Hyperparameter tuning with GridSearchCV and RandomizedSearchCV
+- **Source:** [Kaggle - Healthcare Diabetes Dataset](https://www.kaggle.com/datasets/nanditapore/healthcare-diabetes/data)
+- **Records:** 2,768 patients
+- **Features:**
+  - Pregnancies
+  - Glucose
+  - BloodPressure
+  - SkinThickness
+  - Insulin
+  - BMI
+  - DiabetesPedigreeFunction
+  - Age
+  - Outcome (0 = No diabetes, 1 = Diabetes)
 
-        
-🏆 Results
+## 🔍 Data Preprocessing
 
-Model	Test Accuracy
-  KNN (Weighted)	99.64%
-  Random Forest	99.46%
-  Decision Tree	99.04%
-  SVM	99.04%
-  Naive Bayes	79.60%
-📌 Best model: KNN with weighted distance and n_neighbors=2
+- Removed outliers using quantile clipping
+- Standardized data with `StandardScaler`
+- Addressed imbalance using SMOTE (Synthetic Minority Oversampling Technique)
+- Removed non-informative columns (ID)
+- Replaced physiologically invalid values with column means
+
+## 📈 Exploratory Data Analysis (EDA)
+
+- Count plots and histograms for feature distributions
+- Correlation heatmaps to identify relationships
+- Pairplots to visually distinguish class distributions
+- Boxplots to spot and treat outliers
+
+## 🤖 Models Implemented
+
+- **Random Forest**
+- **Support Vector Machine (SVM)**
+- **Decision Tree**
+- **K-Nearest Neighbors (KNN)**
+- **Naive Bayes**
+
+## 🏆 Results
+
+| Model           | Test Accuracy |
+|----------------|---------------|
+| KNN (weighted) | **99.64%**     |
+| Random Forest  | 99.46%        |
+| Decision Tree  | 99.04%        |
+| SVM            | 99.04%        |
+| Naive Bayes    | 79.60%        |
+
+## 📌 Best Model: KNN (Weighted)
+
+- Weighted distance metric with `n_neighbors = 2`
+- Balanced precision and recall across both classes
+- Outperformed all other models on generalization
+
+## 📁 Project Structure
+
+├── 100661485_Diabetes_prediction.ipynb # Main implementation
+├── 100661485_Diabetes_prediction_report.docx # Detailed report
+└── README.md # Project documentation
 
 
-📁 File Structure
-├── 100661485_Diabetes_prediction.ipynb    # Jupyter notebook with full implementation
-├── 100661485_Diabetes_prediction_report.docx # Detailed project report
-└── README.md                              # Project documentation
+## 📚 Tools & Libraries
 
-🧠 Key Insights
-Proper data pre-processing significantly boosts model performance.
-Ensemble and distance-based models (Random Forest, KNN) outperform probabilistic models (Naive Bayes).
-Addressing class imbalance with SMOTE is crucial for accurate diabetes prediction.
+- Python (Pandas, NumPy, Matplotlib, Seaborn)
+- Scikit-learn
+- imbalanced-learn (SMOTE)
 
-🛠️ Tools & Libraries
-  Python (Pandas, NumPy, Matplotlib, Seaborn)
-  Scikit-learn
-  imbalanced-learn (SMOTE)
+## 👨‍🎓 Author
+
+**Student ID:** 100661485  
+**Institution:** School of Computing and Engineering  
+**Module:** Data Mining and AI
+
+## 📖 References
+
+- Chawla, N.V. et al. (2002). SMOTE: Synthetic Minority Oversampling Technique
+- Bonaccorso, G. (2018). *Machine Learning Algorithms*
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
+- [Kaggle Dataset](https://www.kaggle.com/datasets/nanditapore/healthcare-diabetes/data)
+
+---
+
